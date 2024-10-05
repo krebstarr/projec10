@@ -1,0 +1,767 @@
+/*
+Theme Name: FIFA
+Author: Burroughs Design Co
+Version: 1.0
+*/
+
+/* ==========================================================================
+	Fonts
+========================================================================== */
+
+@font-face {
+	font-family: 'RealtimeText_Semibold';
+	src: url('../fonts/realtime-text-semibold.eot');
+	src: url('../fonts/realtime-text-semibold.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/realtime-text-semibold.woff2') format('woff2'),
+	     url('../fonts/realtime-text-semibold.woff') format('woff'),
+	     url('../fonts/realtime-text-semibold.ttf') format('truetype'),
+	     url('../fonts/realtime-text-semibold.svg#youworkforthem') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	background: #F6F7F7;
+	margin: 0;
+	padding: 0;	
+}
+
+#container {
+	display: block;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+	display: flex;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 81px;
+	margin: 0 0 100px 0;
+	padding: 0 35px;
+	background: #FCFDFF;
+	-webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	-moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	z-index: 1000;
+}
+
+#header h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 10px;
+	line-height: 10px;
+	letter-spacing: .22em;
+	color: #75C381;
+	margin: 0;
+	padding: 0;
+}
+
+#header h1 span {
+	color: #7E8493;
+}
+
+#header h1 a {
+	text-decoration: none;
+	opacity: 1;
+	color: #75C381;
+	transition: opacity .5s ease;
+}
+
+#header h1 span a {
+	text-decoration: none;
+	opacity: 1;
+	color: #7E8493;
+	transition: opacity .5s ease;
+}
+
+#header h1 a:hover,
+#header h1 span a:hover {
+	opacity: .7;
+}
+
+#banner {
+	display: flex;
+	flex-direction: column;
+	max-width: 1080px;
+	background: #FCFDFF;
+	-webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	-moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	margin: 181px 20px 20px 20px;
+	padding: 80px 20px;
+	border-top: 2px solid #0090FF;
+	text-align: left;
+}
+
+#banner-content {
+	display: block;
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+#banner h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 11px;
+	line-height: 11px;
+	letter-spacing: .15em;
+	color: #75C381;
+	margin: 0;
+	text-align: left;
+}
+
+#banner p {
+	font-family: 'RealtimeText_Semibold', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 22px;
+	color: #4B566D;
+	margin: 10px 0 0 0;
+}
+
+#banner p a {
+	text-decoration: none;
+	color: #7E8493;
+	transition: color .5s ease;
+}
+
+#banner p a:hover {
+	color: #0090FF;
+}
+
+#faq {
+	display: flex;
+	flex-direction: column;
+	max-width: 1080px;
+	background: #FCFDFF;
+	-webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	-moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	margin: 40px 20px 100px 20px;
+	padding: 80px 20px;
+	text-align: left;
+	border-top: 2px solid #0090FF;
+}
+
+#faq-content {
+	display: block;
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+.faq {
+  width: 700px;
+}
+
+ul.faq, .faq ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.faq li {
+	margin: 0 0 0 0;
+}
+
+ul.faq li.open {
+	margin: 0;
+}
+
+.answer {
+  display: none;
+}
+
+.faq h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 11px;
+	line-height: 11px;
+	letter-spacing: .15em;
+	color: #75C381;
+	margin: 0 0 8px 0;
+	text-align: left;
+}
+
+.faq h3 {
+	font-family: 'RealtimeText_Semibold', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 22px;
+	color: #4B566D;
+	margin: 0 0 8px 0;
+	text-align: left;
+	cursor: pointer;
+	transition: color .5s ease;
+}
+
+.faq h3:hover {
+	color: #0090FF;
+}
+
+.faq p {
+	font-family: 'RealtimeText_Semibold', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 22px;
+	color: #4B566D;
+	margin: -8px 0 16px 0;
+}
+
+.faq p a {
+	text-decoration: none;
+	color: #7E8493;
+	transition: color .5s ease;
+}
+
+.faq p a:hover {
+	color: #0090FF;
+}
+
+.faq li.open .question h3 {
+	color: #0090FF;
+}
+
+#league {
+	display: block;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 1120px;
+	background: #FCFDFF;
+	-webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	-moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	margin: 181px auto 20px auto;
+	border-top: 2px solid #0090FF;
+}
+
+#league ul {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 36px;
+}
+
+#league ul li {
+	color: #4B566D;
+	display: inline;
+	font-family: 'RealtimeText_Semibold', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 14px;
+	margin: 0;
+}
+
+#league ul li a {
+	color: #7E8493;
+	text-decoration: none;
+}
+
+body.arsenal #league ul li.arsenal a,
+body.bournemouth #league ul li.bournemouth a,
+body.burnley #league ul li.burnley a,
+body.chelsea #league ul li.chelsea a,
+body.crystal #league ul li.crystal a,
+body.everton #league ul li.everton a,
+body.hull #league ul li.hull a,
+body.leicester #league ul li.leicester a,
+body.liverpool #league ul li.liverpool a,
+body.mancity #league ul li.mancity a,
+body.manunited #league ul li.manunited a,
+body.middlesbrough #league ul li.middlesbrough a,
+body.southampton #league ul li.southampton a,
+body.stoke #league ul li.stoke a,
+body.sunderland #league ul li.sunderland a,
+body.swansea #league ul li.swansea a,
+body.tottenham #league ul li.tottenham a,
+body.watford #league ul li.watford a,
+body.westbrom #league ul li.westbrom a,
+body.westham #league ul li.westham a {
+	color: #0090FF;
+}
+
+body.augsburg #league ul li.augsburg a,
+body.bayer #league ul li.bayer a,
+body.bayern #league ul li.bayern a,
+body.bremen #league ul li.bremen a,
+body.darmstadt #league ul li.darmstadt a,
+body.dortmund #league ul li.dortmund a,
+body.frankfurt #league ul li.frankfurt a,
+body.freiburg #league ul li.freiburg a,
+body.hamburg #league ul li.hamburg a,
+body.hertha #league ul li.hertha a,
+body.hoffenheim #league ul li.hoffenheim a,
+body.ingolstadt #league ul li.ingolstadt a,
+body.koln #league ul li.koln a,
+body.leipzig #league ul li.leipzig a,
+body.mainz #league ul li.mainz a,
+body.monchengladbach #league ul li.monchengladbach a,
+body.schalke #league ul li.schalke a,
+body.wolfsburg #league ul li.wolfsburg a {
+	color: #0090FF;
+}
+
+body.atalanta #league ul li.atalanta a,
+body.bologna #league ul li.bologna a,
+body.cagliari #league ul li.cagliari a,
+body.chievo #league ul li.chievo a,
+body.crotone #league ul li.crotone a,
+body.empoli #league ul li.empoli a,
+body.fiorentina #league ul li.fiorentina a,
+body.genoa #league ul li.genoa a,
+body.inter #league ul li.inter a,
+body.juventus #league ul li.juventus a,
+body.lazio #league ul li.lazio a,
+body.milan #league ul li.milan a,
+body.napoli #league ul li.napoli a,
+body.palermo #league ul li.palermo a,
+body.pescara #league ul li.pescara a,
+body.roma #league ul li.roma a,
+body.sampdoria #league ul li.sampdoria a,
+body.sassuolo #league ul li.sassuolo a,
+body.torino #league ul li.torino a,
+body.udinese #league ul li.udinese a {
+	color: #0090FF;
+}
+
+body.alaves #league ul li.alaves a,
+body.atletico #league ul li.atletico a,
+body.betis #league ul li.betis a,
+body.bilbao #league ul li.bilbao a,
+body.barcelona #league ul li.barcelona a,
+body.celta #league ul li.celta a,
+body.deportivo #league ul li.deportivo a,
+body.eibar #league ul li.eibar a,
+body.espanyol #league ul li.espanyol a,
+body.granada #league ul li.granada a,
+body.gijon #league ul li.gijon a,
+body.laspalmas #league ul li.laspalmas a,
+body.leganes #league ul li.leganes a,
+body.malaga #league ul li.malaga a,
+body.osasuna #league ul li.osasuna a,
+body.realmadrid #league ul li.realmadrid a,
+body.sevilla #league ul li.sevilla a,
+body.sociedad #league ul li.sociedad a,
+body.valencia #league ul li.valencia a,
+body.villarreal #league ul li.villarreal a {
+	color: #0090FF;
+}
+
+body.angers #league ul li.angers a,
+body.bastia #league ul li.bastia a,
+body.bordeaux #league ul li.bordeaux a,
+body.caen #league ul li.caen a,
+body.dijon #league ul li.dijon a,
+body.guingamp #league ul li.guingamp a,
+body.lille #league ul li.lille a,
+body.lorient #league ul li.lorient a,
+body.lyon #league ul li.lyon a,
+body.marseille #league ul li.marseille a,
+body.metz #league ul li.metz a,
+body.monaco #league ul li.monaco a,
+body.montpellier #league ul li.montpellier a,
+body.nancy #league ul li.nancy a,
+body.nantes #league ul li.nantes a,
+body.nice #league ul li.nice a,
+body.psg #league ul li.psg a,
+body.rennais #league ul li.rennais a,
+body.saint #league ul li.saint a,
+body.toulouse #league ul li.toulouse a  {
+	color: #0090FF;
+}
+
+body.barnsley #league ul li.barnsley a,
+body.birmingham #league ul li.birmingham a,
+body.blackburn #league ul li.blackburn a,
+body.brentford #league ul li.brentford a,
+body.brighton #league ul li.brighton a,
+body.bristol #league ul li.bristol a,
+body.burton #league ul li.burton a,
+body.cardiff #league ul li.cardiff a,
+body.derby #league ul li.derby a,
+body.forest #league ul li.forest a,
+body.fulham #league ul li.fulham a,
+body.huddersfield #league ul li.huddersfield a,
+body.ipswich #league ul li.ipswich a,
+body.leeds #league ul li.leeds a,
+body.newcastle #league ul li.newcastle a,
+body.norwich #league ul li.norwich a,
+body.preston #league ul li.preston a,
+body.qpr #league ul li.qpr a,
+body.reading #league ul li.reading a,
+body.rotherham #league ul li.rotherham a,
+body.villa #league ul li.villa a,
+body.wednesday #league ul li.wednesday a,
+body.wigan #league ul li.wigan a,
+body.wolves #league ul li.wolves a  {
+	color: #0090FF;
+}
+
+body.ajax #league ul li.ajax a,
+body.feyenoord #league ul li.feyenoord a,
+body.psv #league ul li.psv a  {
+	color: #0090FF;
+}
+
+body.benfica #league ul li.benfica a,
+body.porto #league ul li.porto a,
+body.sporting #league ul li.sporting a  {
+	color: #0090FF;
+}
+
+body.chicago #league ul li.chicago a,
+body.colorado #league ul li.colorado a,
+body.columbus #league ul li.columbus a,
+body.dcunited #league ul li.dcunited a,
+body.fcdallas #league ul li.fcdallas a,
+body.houston #league ul li.houston a,
+body.losangeles #league ul li.losangeles a,
+body.montreal #league ul li.montreal a,
+body.newengland #league ul li.newengland a,
+body.nycfc #league ul li.nycfc a,
+body.newyork #league ul li.newyork a,
+body.orlando #league ul li.orlando a,
+body.philadelphia #league ul li.philadelphia a,
+body.portland #league ul li.portland a,
+body.saltlake #league ul li.saltlake a,
+body.sanjose #league ul li.sanjose a,
+body.seattle #league ul li.seattle a,
+body.skc #league ul li.skc a,
+body.toronto #league ul li.toronto a,
+body.vancouver #league ul li.vancouver a {
+	color: #0090FF;
+}
+
+body.basel #league ul li.basel a,
+body.besiktas #league ul li.besiktas a,
+body.brugge #league ul li.brugge a,
+body.celtic #league ul li.celtic a,
+body.copenhagen #league ul li.copenhagen a,
+body.cska #league ul li.cska a,
+body.legiawarsaw #league ul li.legiawarsaw a,
+body.rostov #league ul li.rostov a {
+	color: #0090FF;
+}
+
+body.anderlecht #league ul li.anderlecht a,
+body.az #league ul li.az a,
+body.fenerbahce #league ul li.fenerbahce a,
+body.genk #league ul li.genk a,
+body.gent #league ul li.gent a,
+body.krasnodar #league ul li.krasnodar a,
+body.olympiacos #league ul li.olympiacos a,
+body.zenit #league ul li.zenit a {
+	color: #0090FF;
+}
+
+#league ul li span {
+	color: #7E8493;
+}
+
+#team {
+	display: flex;
+	flex-direction: row;
+	width: 1120px;
+	margin: 0 auto;
+}
+
+#formation {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 600px;
+	height: 400px;
+	background: #FCFDFF;
+	-webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	-moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	margin: 0 10px 0 0;
+}
+
+p.formation {
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 11px;
+	line-height: 11px;
+	letter-spacing: .2em;
+	color: #7E8493;
+	margin: 50px 0 35px 0;
+}
+
+#formation img {
+	width: 480px;
+	height: 263px;
+}
+
+#squad {
+	display: block;
+	width: 500px;
+	height: 400px;
+	background: #FCFDFF;
+	-webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	-moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	margin: 0 0 0 10px;
+}
+
+#players {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+#players ul {
+	display: block;
+	height: 327px;
+	list-style: none;
+	margin: 0;
+	padding: 73px 73px 0 40px;
+	border-right: solid 1px #ECECEC;
+}
+
+#players ul li {
+	font-family: 'RealtimeText_Semibold', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 14px;
+	color: #4B566D;
+	margin: 0 0 12px 0;
+}
+
+#players ul li a {
+	color: #4B566D;
+	text-decoration: none;
+	display: inline-flex;
+    align-items: center;
+  	transition: color .6s ease;
+}
+
+li.active a, li.active a span {
+	color: #0090FF !important;
+}
+
+li a:hover, li a:hover span {
+	color: #0090FF !important;
+}
+
+#players ul li a span {
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 9px;
+	line-height: 9px;
+	letter-spacing: .15em;
+	color: #7E8493;
+	margin: 2px 6px 0 0;
+}
+
+.instructions {
+	display: block;
+	padding: 73px 0 0 40px;
+}
+
+.instructions h6 {
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 9px;
+	line-height: 9px;
+	letter-spacing: .15em;
+	color: #0090FF;
+	margin: 0;
+}
+
+.instructions p {
+	font-family: 'RealtimeText_Semibold', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 22px;
+	color: #4B566D;
+	margin: 0 0 15px 0;
+}
+
+#tactics {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 1120px;
+	height: 100px;
+	background: #FCFDFF;
+	-webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	-moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	margin: 20px auto 0 auto;
+}
+
+#tactics ul {
+	display: flex;
+	list-style: none;
+}
+
+#tactics ul li {
+	margin: 0 36px 0 0;
+}
+
+#tactics h6 {
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 9px;
+	line-height: 9px;
+	letter-spacing: .15em;
+	color: #75C381;
+	margin: 0;
+}
+
+#tactics p {
+	font-family: 'RealtimeText_Semibold', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 22px;
+	color: #4B566D;
+	margin: 0;
+}
+
+#leagues {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 1120px;
+	margin: 0 auto;
+}
+
+.logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 32.17%;
+	height: 200px;
+	background: #FCFDFF;
+	-webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	-moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.04);
+	margin: 20px 0 0 0;
+	border-top: 2px solid #0090FF;
+}
+
+.logo.dev {
+	border-top: 2px solid #BEC3CC;
+}
+
+img.dev {
+	opacity: .35;
+}
+
+.logo img.dev:hover {
+	opacity: .35;
+}
+
+img.pl {
+	display: block;
+	width: 140px;
+}
+
+img.efl {
+	display: block;
+	width: 58px;
+}
+
+img.ligue1 {
+	display: block;
+	width: 73px;
+}
+
+img.bundesliga {
+	display: block;
+	width: 68px;
+}
+
+img.seriea {
+	display: block;
+	width: 85px;
+}
+
+img.eredivsie {
+	display: block;
+	width: 113px;
+}
+
+img.laliga {
+	display: block;
+	width: 60px;
+}
+
+img.mls {
+	display: block;
+	width: 75px;
+}
+
+img.cl {
+	display: block;
+	width: 102px;
+}
+
+img.europa {
+	display: block;
+	width: 70px;
+}
+
+img.fifa {
+	display: block;
+	width: 98px;
+}
+
+img.portugal {
+	display: block;
+	width: 67px;
+}
+
+.logo img {
+	transition: opacity .6s ease;
+}
+
+.logo img:hover {
+	opacity: .75;
+}
+
+@media screen and (min-width: 1160px) {
+
+#banner {
+	margin: 181px auto 20px auto;
+}
+
+#faq {
+	margin: 40px auto 100px auto;
+}
+
+}
